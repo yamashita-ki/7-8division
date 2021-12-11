@@ -1,17 +1,17 @@
-!---------  ‰ŠúÝ’è  --------------------
+!---------  åˆæœŸè¨­å®š  --------------------
 OPTION BASE 0
 DIM xm(99),xs(99)
-!---------  Šw¶”Ô†  --------------------
-LET numb$="15417098"    
-LET who$="ŽR‰º ´Žj"
+!---------  å­¦ç”Ÿç•ªå·  --------------------
+LET numb$="11111"    
+LET who$="hige"
 LET number=VAL(numb$)
-!---------  ƒVƒXƒeƒ€ŠÖ”@----------------
+!---------  ã‚·ã‚¹ãƒ†ãƒ é–¢æ•°ã€€----------------
 DECLARE EXTERNAL SUB pdnn
 DECLARE EXTERNAL SUB plotzz
 DECLARE EXTERNAL SUB plotmm
 DECLARE EXTERNAL SUB setgraph
 
-!-- Šî–{˜_—‰ñ˜H  --------
+!-- åŸºæœ¬è«–ç†å›žè·¯  --------
 DECLARE EXTERNAL SUB test    ! CALL test(i,y0,y1,y2,y3,y4,y5)
 DECLARE EXTERNAL SUB dff     ! CALL dff(clock,d,qo,qb,xm(*),xs(*))
 DECLARE EXTERNAL SUB nand2    ! CALL nand2(out,in1,in2)
@@ -30,16 +30,16 @@ DECLARE EXTERNAL SUB mdff
 !--------------------------
 LET  tslot=37
 CALL setgraph(tslot,xm,xs)
-!--------  ‰ŠúÝ’èI—¹  ------------------------------------------------------
+!--------  åˆæœŸè¨­å®šçµ‚äº†  ------------------------------------------------------
 !------------------------------------------------------------------------------
 FOR i=0  TO tslot STEP 0.01 
    LET clk=1-INT(MOD (2*i,2))
    !------------------------------------------------------------------------------  
-   !        CLKFƒVƒXƒeƒ€ƒNƒƒbƒNAtestFƒeƒXƒgM†”­¶Ší 
+   !        CLKï¼šã‚·ã‚¹ãƒ†ãƒ ã‚¯ãƒ­ãƒƒã‚¯ã€testï¼šãƒ†ã‚¹ãƒˆä¿¡å·ç™ºç”Ÿå™¨ 
    !------------------------------------------------------------------------------   
    CALL  test(i,y0,y1,y2,y3,y4,y5) 
-   !###############    ˜_—‹LqiƒlƒbƒgƒŠƒXƒgj  ################################# 
-   ! —\–ñ•Ï”(Žg—p‚Å‚«‚È‚¢•Ï”–¼)  i,clk,tslot,number,xm(),xs(),y0`y7,z0`z7,zm0$`zm7$
+   !###############    è«–ç†è¨˜è¿°ï¼ˆãƒãƒƒãƒˆãƒªã‚¹ãƒˆï¼‰  ################################# 
+   ! äºˆç´„å¤‰æ•°(ä½¿ç”¨ã§ããªã„å¤‰æ•°å)  i,clk,tslot,number,xm(),xs(),y0ï½žy7,z0ï½žz7,zm0$ï½žzm7$
    CALL dff(clk,n4,m0,qb0,xm(0),xs(0)) 
    CALL dff(clk,m0,m1,qb1,xm(1),xs(1)) 
    CALL dff(clk,m1,m2,qb2,xm(2),xs(2))
@@ -58,7 +58,7 @@ FOR i=0  TO tslot STEP 0.01
    CALL dff(clk0,n5,m4,qb4,xm(4),xs(4))
    CALL nand2(c,m4,m2)
     
-   !-------------   ƒvƒƒbƒgo—Í‚ÌÝ’è@@  -----------------------------------
+   !-------------   ãƒ—ãƒ­ãƒƒãƒˆå‡ºåŠ›ã®è¨­å®šã€€ã€€  -----------------------------------
    LET z0=m1
    LET zm0$="m1"
    LET z1=n6
